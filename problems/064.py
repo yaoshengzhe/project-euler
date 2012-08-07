@@ -21,11 +21,12 @@ def foo():
         print n
         history_table = []
         square_of_n = math.sqrt(n)
-        x, y = fractions.Fraction(-int(square_of_n)), fractions.Fraction(1)
+        #x, y = fractions.Fraction(-int(square_of_n)), fractions.Fraction(1)
+        x, y = -float(int(square_of_n)), 1.0
         history_table.append((x, y))
         a = [-x]
         while True:
-            y = fractions.Fraction(n - x**2, y)
+            y = (n - x**2) / y
             next_a = int((square_of_n - x) / y)
             x =  -x - next_a * y
             a.append(next_a)
