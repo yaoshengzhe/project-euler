@@ -2,16 +2,6 @@
 
 from util.prime import is_prime
 
-def find_prime_factor(num):
-    prime_factor_table = set()
-    for i in range(2, num + 1):
-        while num % i == 0:
-            num = num / i
-            prime_factor_table.add(i)
-        if num == 1:
-            break
-    return prime_factor_table
-
 # phi(p_0^q0p_1^q_1...) = phi(p_0^q0) * phi(p_1^q_1) * ...
 # here p_n is prime number, q_n is positive integer
 # so, for given number n, factorize n and we get n = p_0^q_0 * p_1^q_1 * ..
